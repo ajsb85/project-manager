@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+ 		<link rel="stylesheet/less" href="less/bootstrap.less" />
+
+		<script>
+		  less = {
+			env: "development",
+			logLevel: 2,
+			async: false,
+			fileAsync: false,
+			poll: 1000,
+			functions: {},
+			dumpLineNumbers: "comments",
+			relativeUrls: false,
+			rootpath: ":/a.com/"
+		  };
+		</script>
+		<script src="js/less-1.6.2.js"></script>
+
+
+<style>* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  background: linear-gradient(45deg, #539fa2 0%, #72b1a4 33%, #c4dbb4 67%, #abccb1), linear-gradient(125deg, #539fa2 0%, #72b1a4 33%, #c4dbb4 67%, #abccb1);
+  min-height: 100vh;
+}
+.cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.first-cover {
+  background: linear-gradient(-45deg, rgba(100,100,255,0.5), rgba(255,255,255,0));
+  -webkit-animation: fadeInOut 10s infinite 5s;
+}
+.user-location {
+  padding-left: 0;
+}
+.content {
+  background: rgba(255,255,255,0);
+  color: #fff;
+  min-width: 20rem;
+  margin: 2rem auto;
+  min-height: 50vh;
+  position: relative;
+  padding: 2rem;
+}
+.content h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.content .location {
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+  transition: background 0.25s ease, opacity 0.8s ease-out;
+  cursor: pointer;
+}
+.content .location.current {
+  background: rgba(255,255,255,0.3);
+  cursor: default;
+}
+.content .location.current .id {
+  right: 2.25rem;
+}
+.content .location.current .remove {
+  right: 0.5rem;
+  cursor: pointer;
+}
+.content .location:not(.current):hover {
+  background: rgba(255,255,255,0.1);
+}
+.content .location p {
+  padding: 0.5rem;
+  font-weight: bold;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.content .location p span {
+  position: absolute;
+  font-weight: normal;
+  right: 0.5rem;
+  transition: right 0.25s ease;
+}
+.content .location p .remove {
+  right: -1.25rem;
+  font-size: 2rem;
+  line-height: 1.375rem;
+}
+.content input {
+  border: 1px solid rgba(255,255,255,0.5);
+  
+  background: transparent;
+  color: #fff;
+  transition: box-shadow 0.25s ease, background 0.25s ease;
+box-shadow:
+        0 0 0 8px rgba(255,255,255,0);
+}
+.content input:focus {
+  box-shadow:
+        0 0 0 2px rgba(255,255,255,0.9);
+}
+.btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.5);
+  color: #fff;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  margin: 1rem auto;
+  display: block;
+  padding: 0.5rem;
+  /*outline: 8px solid rgba(255,255,255,0);*/
+box-shadow:
+        0 0 0 8px rgba(255,255,255,0);
+}
+.btn:hover,
+.btn:focus {
+  /*outline: 2px solid rgba(255,255,255,0.9);*/
+box-shadow:
+        0 0 0 2px rgba(255,255,255,0.9);
+}
+.btn:active {
+  background: rgba(0,0,0,0.05);
+}
+.btn.inactive {
+  pointer-events: none;
+}
+#save-and-return {
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+.input-wrapper {
+  position: relative;
+  max-width: 20rem;
+  margin: .5rem auto;
+}
+#add {
+  display: inline-block;
+  position: absolute;
+  padding: 9px;
+  margin: 0;
+  top: 0.625rem;
+  right: 0;
+  width: 20%;
+  line-height: 0.75rem;
+  transition: opacity 0.25s ease, outline 0.25s ease;
+  border: none;
+  outline: none;
+}
+#add:active {
+  background: transparent;
+}
+#add:hover {
+  outline: none;
+}
+#add.inactive {
+  opacity: 0;
+  pointer-events: none;
+}
+@-webkit-keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.7);
+}
+:-moz-placeholder {
+  color: rgba(255,255,255,0.7);
+}
+::-moz-placeholder {
+  color: rgba(255,255,255,0.7);
+}
+:-ms-input-placeholder {
+  color: rgba(255,255,255,0.7);
+}
+html {
+width: 100%;
+height: 100%;
+}
+
+body {
+position: absolute;
+top: 0px;
+bottom: 0px;
+left: 0px;
+right: 0px;
+height: 100%;
+width: 100%;
+
+}
+
+#name{
+    margin-bottom: 150px;
+    }
+#login {
+position: absolute;
+width: 300px;
+height: 456px;
+       left: 0px;
+        top: 0px;
+
+}
+    
+    #github{
+        display: none;
+    }
+  #orgs-box {
+        display:none;
+        max-height: 125px;
+        overflow-y: auto;
+        margin: 0 -20px;
+    }
+    
+/*::-webkit-scrollbar-button       { background: rgba(255,255,255,0.7);  }*/
+/*::-webkit-scrollbar-track-piece  { background: rgba(255,255,255,0.7);  }*/    
+/*::-webkit-scrollbar-corner       { background: rgba(255,255,255,0.7);  }*/
+/*::-webkit-resizer                { background: rgba(255,255,255,0.7);  }*/
+    ::-webkit-scrollbar-thumb { 
+        background: rgba(255,255,255,0.7);   
+    }
+    ::-webkit-scrollbar-track { 
+        background: rgba(255,255,255,0.15);  
+    }
+    ::-webkit-scrollbar { 
+        width: 8px;
+        background: rgba(255,255,255,0);
+    } 
+/*     ::-webkit-scrollbar-track { 
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+       -webkit-border-radius: 10px; 
+        border-radius: 10px; 
+    }  
+    ::-webkit-scrollbar-thumb { 
+        -webkit-border-radius: 10px;
+        border-radius: 10px; 
+        background: rgba(255,255,255,0.7); 
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    } 
+    ::-webkit-scrollbar-thumb:window-inactive { 
+        
+    } */
+</style></head><body>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   width="300.00107"
+   height="456.25864"
+   id="login">
+  <defs
+     id="defs8881">
+    <clipPath
+       id="clipPath1098">
+      <path
+         d="m 0,7307 2267.72,0 0,-7307 L 0,0 0,7307 z"
+         id="path1100" />
+    </clipPath>
+    <clipPath
+       id="clipPath1086">
+      <path
+         d="m 674.352,5961.997 c 0,-47.852 38.795,-86.644 86.649,-86.644 l 0,0 c 44.25,0 80.755,33.172 85.999,76.006 l 0,0 0,21.277 c -5.244,42.837 -41.749,76.009 -85.999,76.009 l 0,0 c -47.854,0 -86.649,-38.792 -86.649,-86.648"
+         id="path1088" />
+    </clipPath>
+    <clipPath
+       id="clipPath1070">
+      <path
+         d="m 0,7307 2267.72,0 0,-7307 L 0,0 0,7307 z"
+         id="path1072" />
+    </clipPath>
+    <clipPath
+       id="clipPath1030">
+      <path
+         d="m 0,7307 2267.72,0 0,-7307 L 0,0 0,7307 z"
+         id="path1032" />
+    </clipPath>
+    <clipPath
+       id="clipPath1038">
+      <path
+         d="m 650.853,6072.15 220.293,0 0,-220.3 -220.293,0 0,220.3 z"
+         id="path1040" />
+    </clipPath>
+    <clipPath
+       id="clipPath16">
+      <path
+         d="m 0,275.986 530.973,0 L 530.973,0 0,0 0,275.986 z"
+         id="path18" />
+    </clipPath>
+    <clipPath
+       id="clipPath1086-1">
+      <path
+         d="m 674.352,5961.997 c 0,-47.852 38.795,-86.644 86.649,-86.644 l 0,0 c 44.25,0 80.755,33.172 85.999,76.006 l 0,0 0,21.277 c -5.244,42.837 -41.749,76.009 -85.999,76.009 l 0,0 c -47.854,0 -86.649,-38.792 -86.649,-86.648"
+         id="path1088-7" />
+    </clipPath>
+  </defs>
+  <metadata
+     id="metadata8884">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <foreignObject x="0" y="0" width="100%" height="100%" xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="content">
+  <h2 id="name">Welcome</h2>
+    <div id="login-box">
+<div class="input-wrapper input-group">
+  <span class="input-group-addon"></span>
+  <input id="username" type="text" class="form-control" placeholder="Username" maxlength="39">
+</div>
+
+<div class="input-wrapper input-group">
+  <span class="input-group-addon"></span>
+  <input type="password" class="form-control" placeholder="Password">
+</div>
+<button type="button" id="loading-example-btn" data-loading-text="Request orgs..." class="btn btn-primary">
+  Generar Token
+</button>
+ </div>
+  <div id="orgs-box">
+  <div class="location current">
+    <p>Siragon <span class="id">1598583</span><span class="remove">×</span></p>
+  </div>
+  <div class="location">
+    <p>CanaimaGNULinux <span class="id">2762400</span><span class="remove">×</span></p>
+  </div>
+  <div class="location">
+    <p>Firechip <span class="id">1316526</span><span class="remove">×</span></p>
+  </div>
+    </div>
+    </div>
+  </foreignObject>
+  <path
+     d="m 97.479294,154.37631 c 0,-29.00705 23.514906,-52.52148 52.521476,-52.52148 29.00657,0 52.521,23.51443 52.521,52.52148 0,29.00705 -23.51443,52.521 -52.521,52.521 -29.00657,0 -52.521476,-23.51395 -52.521476,-52.521"
+     id="avatar-outline"
+     style="opacity:0.19999701;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+  <g
+     transform="matrix(0.51260374,0,0,-0.51260374,-239.79588,3210.5191)"
+     id="avatar-group">
+    <g
+       clip-path="url(#clipPath1086-1)"
+       id="g1084">
+      <g
+         transform="matrix(173.98216,0,0,173.98216,673.01782,5875.2508)"
+         id="g1090">
+        <image
+           xlink:href=""
+           width="1"
+           height="1"
+           transform="matrix(1,0,0,-1,0,1)"
+           id="avatar" />
+      </g>
+    </g>
+  </g>
+  <path
+     d="m 206.00815,132.25999 c -8.81803,-22.30376 -30.56199,-38.09878 -56.01045,-38.09878 -25.44179,0 -47.18575,15.79502 -56.003778,38.09878"
+     id="path1076"
+     style="fill:none;stroke:#ffffff;stroke-width:0.47683078;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" />
+  <path
+     d="m 93.993917,176.49258 c 8.818033,22.31139 30.561993,38.09878 56.003773,38.09878 25.44846,0 47.19242,-15.78739 56.01046,-38.09878"
+     id="path1080"
+     style="fill:none;stroke:#ffffff;stroke-width:0.47683078;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" />
+  <path
+     d="m 299.52425,144.286 0,-137.5466097 c 0,0 0,-6.25554312 -6.25936,-6.25554312 l -286.531911,0 c 0,0 -6.25506627,0 -6.25506627,6.25554312 l 0,137.5466097"
+     id="path1104"
+     style="fill:none;stroke:#ffffff;stroke-width:0.95366156;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" />
+  <path
+     d="m 0.47781487,154.97606 0,294.90077 c 0,0 0,6.25554 6.25935783,6.25554 l 286.5319173,0 c 0,0 6.25506,0 6.25506,-6.25554 l 0,-294.90077"
+     id="path1108"
+     style="fill:none;stroke:#ffffff;stroke-width:0.23841539;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" />
+  <path
+     d="m 0.61189969,376.72557 298.73449031,0"
+     id="path1130"
+     style="fill:none;stroke:#ffffff;stroke-width:0.23841539;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" />
+  <g
+     transform="translate(-0.12870136,0.84788)"
+     id="github">
+    <path
+       d="m 150.2582,110.3707 c -24.43555,0 -44.25027,19.81033 -44.25027,44.25027 0,19.5502 12.67905,36.13709 30.26103,41.98823 2.21149,0.40962 3.0234,-0.95992 3.0234,-2.12869 0,-1.05445 -0.041,-4.54095 -0.0601,-8.23848 -12.31047,2.67679 -14.90812,-5.22096 -14.90812,-5.22096 -2.01291,-5.11398 -4.9132,-6.47472 -4.9132,-6.47472 -4.01483,-2.74641 0.30263,-2.68999 0.30263,-2.68999 4.44349,0.31216 6.78322,4.56074 6.78322,4.56074 3.94667,6.76416 10.35178,4.80841 12.87689,3.67775 0.39716,-2.85925 1.54394,-4.81207 2.80943,-5.91708 -9.82859,-1.11821 -20.16059,-4.9132 -20.16059,-21.86867 0,-4.8304 1.72859,-8.77854 4.55927,-11.87741 -0.45945,-1.11453 -1.97407,-5.61518 0.42867,-11.71033 0,0 3.71658,-1.18855 12.17197,4.53655 3.52974,-0.98044 7.3152,-1.47212 11.07576,-1.48971 3.76056,0.0176 7.54896,0.50927 11.08528,1.48971 8.44587,-5.7251 12.15659,-4.53655 12.15659,-4.53655 2.4086,6.09515 0.89398,10.5958 0.43453,11.71033 2.83727,3.09887 4.55341,7.04701 4.55341,11.87741 0,16.9965 -10.35178,20.73801 -20.20529,21.83349 1.58717,1.37321 3.00141,4.06612 3.00141,8.19453 0,5.92074 -0.0506,10.68592 -0.0506,12.14339 0,1.17829 0.79578,2.55736 3.03878,2.12356 17.57246,-5.85773 30.23612,-22.43876 30.23612,-41.9831 0,-24.43994 -19.81179,-44.25027 -44.25027,-44.25027"
+       id="path26"
+       style="fill:#323131;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+    <path
+       d="m 122.76804,173.90378 c -0.0975,0.22056 -0.44332,0.28651 -0.75841,0.13556 -0.32169,-0.14509 -0.50121,-0.44479 -0.39716,-0.66535 0.0953,-0.22569 0.44112,-0.28871 0.76207,-0.13776 0.32096,0.14436 0.50415,0.44699 0.3935,0.66755"
+       id="path30"
+       style="fill:#323131;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <path
+       d="m 124.5606,175.9032 c -0.21104,0.19565 -0.62432,0.10479 -0.9035,-0.20444 -0.29018,-0.3085 -0.34367,-0.72178 -0.1297,-0.91962 0.21763,-0.19565 0.61772,-0.10406 0.90716,0.20444 0.29018,0.31216 0.3466,0.72104 0.12604,0.91962"
+       id="path34"
+       style="fill:#323131;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <path
+       d="m 126.30517,178.4514 c -0.27112,0.18905 -0.71518,0.0125 -0.98923,-0.38177 -0.27113,-0.3935 -0.27113,-0.8654 0.007,-1.05445 0.27406,-0.18906 0.71152,-0.0183 0.98923,0.37151 0.2704,0.40009 0.2704,0.87199 -0.007,1.06471"
+       id="path38"
+       style="fill:#323131;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <path
+       d="m 128.69524,180.91371 c -0.24255,0.26746 -0.75915,0.19565 -1.13725,-0.16927 -0.3869,-0.35686 -0.49462,-0.8632 -0.25207,-1.13066 0.24621,-0.26819 0.76574,-0.19271 1.14677,0.16927 0.38397,0.35613 0.50122,0.86613 0.24255,1.13066"
+       id="path42"
+       style="fill:#323131;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <path
+       d="m 131.99268,182.34349 c -0.10698,0.3466 -0.60453,0.50341 -1.10574,0.35612 -0.50048,-0.15168 -0.82803,-0.5569 -0.72691,-0.90716 0.10405,-0.34953 0.6038,-0.51294 1.10868,-0.35539 0.49974,0.15095 0.82802,0.55397 0.72397,0.90643"
+       id="path46"
+       style="fill:#323131;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <path
+       d="m 135.61431,182.60823 c 0.0125,0.36492 -0.41255,0.66755 -0.93867,0.67414 -0.52906,0.0125 -0.95773,-0.28358 -0.96359,-0.64263 0,-0.36858 0.41621,-0.66755 0.94453,-0.67708 0.52613,-0.0103 0.95773,0.28358 0.95773,0.64557"
+       id="path50"
+       style="fill:#323131;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <path
+       d="m 138.984,182.03507 c 0.063,0.35539 -0.30263,0.72104 -0.82509,0.8185 -0.51367,0.0945 -0.98924,-0.12604 -1.05445,-0.4785 -0.0638,-0.36491 0.30776,-0.73056 0.82143,-0.82509 0.52319,-0.0909 0.99143,0.1231 1.05811,0.48509"
+       id="path54"
+       style="fill:#323131;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+  </g>
+</svg>
+
+
+
+
+
+<script>
+window.onload = function(){
+     $('#loading-example-btn').click(function (e) {
+      e.preventDefault();
+        var btn = $(this);
+        btn.button('loading');
+        var orgs = '';
+        $.ajax({
+            url: "https://api.github.com/users/alexsalas/orgs",
+            dataType: "json",
+            success: function (data) {
+                $("#orgs-box").empty();
+                $.each(data, function (e, item) {
+                    orgs += '<div class="location">';
+                     orgs += '    <p>'+item.login+' <span class="id">'+item.id+'</span><span class="remove">×</span></p>';
+                     orgs += '</div>';
+                });
+                $("#orgs-box").append(orgs);
+                $("#orgs-box").slideDown(200);
+                $("#login-box").slideUp(200);
+            }
+        }).always(function () {
+            btn.addClass('disabled').prop('disabled',true).text('Complete');;
+        });
+     });
+        
+    var gui = require('nw.gui'); //or global.window.nwDispatcher.requireNwGui() (see https://github.com/rogerwang/node-webkit/issues/707)
+    
+    // Get the current window
+    var win = gui.Window.get();
+        
+    win.on('resize', function() {
+		var t=($(window).height()/2)-(456/2);
+		var l=($(window).width()/2)-(300/2);
+        $( "#login" ).css('top', t + 'px');
+        $( "#login" ).css('left', l + 'px');
+        
+//          $( "#login" ).animate({
+//            top: t,
+//            left: l
+//          }, 1000 );
+    });
+    
+
+		var t=($(window).height()/2)-(456/2);
+		var l=($(window).width()/2)-(300/2);
+        $( "#login" ).css('top', t + 'px');
+        $( "#login" ).css('left', l + 'px');
+    $( "#github" ).show();
+    
+//  $( "#login" ).animate({
+//    top: t,
+//    left: l
+//  }, 1500 );
+//$("#logmein").click(function(e) {
+//
+//});
+//
+//$("#createme").click(function(e) {
+//  e.preventDefault();
+//   $("#login-box").slideUp(200);
+//       $("#orgs-box").slideDown(200);
+// 
+//});
+    $( "#username" ).change(function() {
+        var username = $(this).val()
+        var regExp = /^\w+$/;
+        if('' !== username ? regExp.test( username ) : false){
+            $.ajax({
+                error: function (request, status, error) {
+                    console.log(request.responseText);
+                    console.log(status);
+                    console.log(error);
+                },
+                statusCode: {
+                    404: function() {
+                        alert("nombre de usuario no existe");
+                    }
+                },
+                url: "https://api.github.com/users/"+username,
+                dataType: "json",
+                success: function (data) {
+                    $( "#name" ).text(data.name);
+                    $( "#github" ).hide();
+                    $( "#avatar" ).attr('xlink:href', data.avatar_url);
+                }
+            }).always(function () {
+                //btn.button('reset');
+                //btn.addClass('disabled').prop('disabled',true);
+            });
+        }else{
+            alert("nombre de usuario invalido");
+        }
+        });
+    
+
+}
+</script>
+
+		<script src="js/jquery-2.1.0.js"></script>
+		<script src="js/bootstrap-3.1.0.js"></script>
+</body>
+</html>

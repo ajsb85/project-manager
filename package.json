@@ -1,0 +1,16 @@
+{
+  "name": "AnimatedBorderMenus2",
+  "description": "Simple file explorer.",
+  "version": "0.1",
+  "main": "index.html",
+  "window": {
+    "show": true,
+    "position": "center",
+    "toolbar": true,
+     "width": 450,
+    "height": 700,
+	"frame": true,
+	"kiosk": false,
+	"as_desktop": true
+  }
+}
